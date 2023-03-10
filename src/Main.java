@@ -1,5 +1,11 @@
+
+
+
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        Hogwarts harryPotter = new Hogwarts("Harry Potter", 11);
+        harryPotter.study();
+        harryPotter.playQuidditch();
     }
 }
