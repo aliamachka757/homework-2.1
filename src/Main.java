@@ -4,7 +4,7 @@
 
 public class Main {
     public static void main(String[] args) {
-        // Create some Hogwarts students
+
         Gryffindor harry = new Gryffindor("Harry Potter", 17, true, true);
         Gryffindor ron = new Gryffindor("Ron Weasley", 17, true, false);
         Slytherin draco = new Slytherin("Draco Malfoy", 17, true, false);
@@ -30,7 +30,7 @@ public class Main {
             System.out.println(draco.getName() + " and Vincent Crabbe are equally cunning and ambitious");
         }
 
-        // Call study and playQuidditch methods on Ravenclaw student
+
         luna.study();
         luna.playQuidditch();
     }
