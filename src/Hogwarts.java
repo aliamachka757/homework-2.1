@@ -1,4 +1,4 @@
-public class Hogwarts {
+public abstract class Hogwarts {
     private String name;
     private int age;
 
@@ -22,4 +22,10 @@ public class Hogwarts {
     public int getAge() {
         return age;
     }
+
+    public abstract int compareStudents(Hufflepuff other);
+
+    protected abstract boolean isChivalrous();
+
+    protected abstract boolean isBrave();
 }

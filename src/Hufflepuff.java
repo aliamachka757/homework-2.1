@@ -1,27 +1,35 @@
 public class Hufflepuff extends Hogwarts {
     private boolean loyal;
-    private boolean hardworking;
+    private boolean patient;
 
-    public Hufflepuff(String name, int age, boolean loyal, boolean hardworking) {
+    public Hufflepuff(String name, int age, boolean loyal, boolean patient) {
         super(name, age);
         this.loyal = loyal;
-        this.hardworking = hardworking;
-    }
-
-    public void displayStudentInfo() {
-        System.out.println("Student name " + getName());
-        System.out.println("Age: " + getAge());
-        System.out.println("Loyal: " + loyal);
-        System.out.println("Hardworking: " + hardworking);
-        study();
-        playQuidditch();
+        this.patient = patient;
     }
 
     public boolean isLoyal() {
         return loyal;
     }
 
-    public boolean isHardworking() {
-        return hardworking;
+    public boolean isPatient() {
+        return patient;
+    }
+
+    @Override
+    public int compareStudents(Hufflepuff other) {
+        int thisSum = (this.isLoyal() ? 1 : 0) + (this.isPatient() ? 1 : 0);
+        int otherSum = (other.isLoyal() ? 1 : 0) + (other.isPatient() ? 1 : 0);
+        return Integer.compare(thisSum, otherSum);
+    }
+
+    @Override
+    protected boolean isChivalrous() {
+        return false;
+    }
+
+    @Override
+    protected boolean isBrave() {
+        return false;
     }
 }

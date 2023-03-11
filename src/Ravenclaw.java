@@ -1,27 +1,39 @@
 public class Ravenclaw extends Hogwarts {
     private boolean intelligent;
-    private boolean wise;
+    private boolean curious;
 
-    public Ravenclaw(String name, int age, boolean intelligent, boolean wise) {
+    public Ravenclaw(String name, int age, boolean intelligent, boolean curious) {
         super(name, age);
         this.intelligent = intelligent;
-        this.wise = wise;
-    }
-
-    public void displayStudentInfo() {
-        System.out.println("Student name: " + getName());
-        System.out.println("Age: " + getAge());
-        System.out.println("Intelligent: " + intelligent);
-        System.out.println("Wise: " + wise);
-        study();
-        playQuidditch();
+        this.curious = curious;
     }
 
     public boolean isIntelligent() {
         return intelligent;
     }
 
-    public boolean isWise() {
-        return wise;
+    public boolean isCurious() {
+        return curious;
+    }
+
+    public int compareStudents(Ravenclaw other) {
+        int thisSum = (this.isIntelligent() ? 1 : 0) + (this.isCurious() ? 1 : 0);
+        int otherSum = (other.isIntelligent() ? 1 : 0) + (other.isCurious() ? 1 : 0);
+        return Integer.compare(thisSum, otherSum);
+    }
+
+    @Override
+    public int compareStudents(Hufflepuff other) {
+        return 0;
+    }
+
+    @Override
+    protected boolean isChivalrous() {
+        return false;
+    }
+
+    @Override
+    protected boolean isBrave() {
+        return false;
     }
 }
